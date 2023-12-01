@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Планировщик посещений - Салехард</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/planer.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastr@2/build/toastr.min.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastr@2/build/toastr.min.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <header>
+            <h1>Планировщик</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="photos.html">Фотографии</a></li>
+                    <li><a href="map.html">Карта</a></li>
+                    <li><a href="weather.html">Погода</a></li>
+                    <li><a href="planer.html">Планировщик</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-planer">
+            <h2>Планирование посещений достопримечательностей Салехарда</h2>
+            <form id="schedule-form">
+                <div class="button-container">
+                    <button type="submit">Открыть расписание</button>
+                </div>
+            </form>
+            <!-- Мод окно для выбора дост -->
+            <div id="attraction-modal" class="modal">
+                <div class="modal-content"> <span class="close">&times;</span>
+                    <input type="text" id="search-attraction" placeholder="Поиск...">
+                    <div id="attraction-list"></div>
+                </div>
+            </div>
+
+            <div id="schedule-container"></div>
+
+            <form>
+                <button type="button" id="save-schedule" style="display:none;">Сохранить расписание</button>
+            </form>
+            <form onclick=location.reload()>
+                <button type="button" id="delete-schedule" style="display:none; ">Удалить расписание</button>
+            </form>
+        </main>
+        <div class="spacer2"></div>
+    </div>
+    <footer>
+        <p>© 2023, Нилогов Сергей </p>
+        <p><i>Электронная почта:</i> nilogov2003@gmal.com</p>
+    </footer>
+</body>
+
+</html>

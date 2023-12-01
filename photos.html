@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/photos.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/comments.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Фотографии Салехарда</title>
+</head>
+
+<body>
+    <header>
+        <h1>Фотографии Салехарда</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="photos.html">Фотографии</a></li>
+                <li><a href="map.html">Карта</a></li>
+                <li><a href="weather.html">Погода</a></li>
+                <li><a href="planer.html">Планировщик</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="photo-gallery">
+            <div class="photo-container"> <img src="images/1shd.png" alt="Стелла 66 параллель"></div>
+            <div class="photo-container"> <img src=images/2shd.jpg alt="Мост Ямал"> </div>
+            <div class="photo-container"> <img src=images/3shd.jpg alt="Северное сияние"> </div>
+            <div class="photo-container"> <img src=images/4shd.jpg alt="Вид на город с высоты птичьего полета"> </div>
+            <div class="photo-container"> <img src=images/5shd.jpg alt="Памятник мамонту"> </div>
+            <div class="photo-container"> <img src=images/6shd.jpg alt="Собор преображения господня"> </div>
+            <div class="photo-container"> <img src=images/7shd.jpg alt="Концертный зал"> </div>
+            <div class="photo-container"> <img src=images/7shd.jpeg alt="Правительство ЯНАО"> </div>
+            <div class="photo-container"> <img src=images/9shd.jpg alt="Памятник Поезду"> </div>
+            <div class="photo-container"> <img src=images/10shd.jpg alt="Обдорский острог"> </div>
+            <div class="photo-container"> <img src=images/11shd.jpg alt="Еще Стелла"> </div>
+            <div class="photo-container"> <img src=images/12shd.jpg alt="Памятник северному оленю"> </div>
+        </section>
+    </main>
+    <!-- Предзагрузчик, по условию -->
+    <div class="preloader" id="preloader"></div>
+    <!-- Для открытия - модалка -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+        <div class="prev" id="prevButton">&#10094;</div>
+        <div class="next" id="nextButton">&#10095;</div>
+    </div>
+    <!-- Комменты -->
+    <div class="comments-section" id="modalComments">
+        <h3>Комментарии</h3>
+        <div class="comments-display" id="commentsDisplay"></div>
+        <div class="preloader" id="preloader"></div>
+        <form id="newCommentForm">
+            <input type="text" id="commentName" placeholder="Ваше имя">
+                <input type="email" id="commentEmail" placeholder="Ваш email">
+            <textarea id="commentBody" placeholder="Ваш комментарий"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+    <!-- *TODO:6 скрипт для сетевого взаимодействия -->
+    <script> 
+        var modal = document.getElementById("myModal");
+        var images = document.querySelectorAll('.photo-container img');
+        var modalImg = document.getElementById("modalImage");
+        var captionText = document.getElementById("caption");
+        for (let i = 0; i < images.length; i++) { /* Обработчик событий клик на фото*/
+            images[i].onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+                currentImageIndex = i;
+            }
+        }
+        var span = document.getElementsByClassName("close")[0]; /* 1 */
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        var currentImageIndex;
+        document.getElementById("nextButton").onclick = function () {
+            if (currentImageIndex + 1 < images.length) { /* След есть */
+                currentImageIndex++;
+                modalImg.src = images[currentImageIndex].src;
+                captionText.innerHTML = images[currentImageIndex].alt;
+            }
+        }
+        document.getElementById("prevButton").onclick = function () {
+            if (currentImageIndex > 0) { /* Не 1, i -на 1*/
+                currentImageIndex--;
+                modalImg.src = images[currentImageIndex].src;
+                captionText.innerHTML = images[currentImageIndex].alt;
+            }
+        }
+    </script>
+    <footer>
+        <p>© 2023, Нилогов Сергей </p>
+        <p><i>Электронная почта:</i> nilogov2003@gmal.com</p>
+    </footer>
+</body>
+
+</html>
