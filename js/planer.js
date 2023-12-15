@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Обработчик события  реагирует на событие отправки формы - submit. Происходит бработка отправки формы расписания. Потом вызывает функцию для генерации расписания, скрывает форму и отображает кнопку сохранения расписания.
 	document
 		.getElementById('schedule-form')
-		.addEventListener('submit', function (event) { //*TODO: по лабораторной работе
-			event.preventDefault()
+		.addEventListener('submit', function (event) { //*TODO: по лабораторной работе. когда форма пытается отправить данные
+			event.preventDefault() // предотвращение f5
 			generateSchedule()
 			this.style.display = 'none'
 			saveButton.style.display = 'inline-block'
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			slot.addEventListener('click', function () {
 				if (!slot.hasChildNodes()) {
 					openAttractionSelector(slot.id)
-				} /*Чтобы не было дабл клика*/
+				} /*Чтобы не было дабл клика проверка на хран*/
 			})
 		})
 	}

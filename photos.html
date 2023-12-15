@@ -57,44 +57,10 @@
         <form id="newCommentForm">
             <input type="text" id="commentName" placeholder="Ваше имя">
                 <input type="email" id="commentEmail" placeholder="Ваш email">
-            <textarea id="commentBody" placeholder="Ваш комментарий"></textarea>
+            <textarea id="commentBody" placeholder="Ваш комментарий" maxlength="300"></textarea>
             <button type="submit">Отправить</button>
         </form>
     </div>
-    <!-- *TODO:6 скрипт для сетевого взаимодействия -->
-    <script> 
-        var modal = document.getElementById("myModal");
-        var images = document.querySelectorAll('.photo-container img');
-        var modalImg = document.getElementById("modalImage");
-        var captionText = document.getElementById("caption");
-        for (let i = 0; i < images.length; i++) { /* Обработчик событий клик на фото*/
-            images[i].onclick = function () {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
-                currentImageIndex = i;
-            }
-        }
-        var span = document.getElementsByClassName("close")[0]; /* 1 */
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-        var currentImageIndex;
-        document.getElementById("nextButton").onclick = function () {
-            if (currentImageIndex + 1 < images.length) { /* След есть */
-                currentImageIndex++;
-                modalImg.src = images[currentImageIndex].src;
-                captionText.innerHTML = images[currentImageIndex].alt;
-            }
-        }
-        document.getElementById("prevButton").onclick = function () {
-            if (currentImageIndex > 0) { /* Не 1, i -на 1*/
-                currentImageIndex--;
-                modalImg.src = images[currentImageIndex].src;
-                captionText.innerHTML = images[currentImageIndex].alt;
-            }
-        }
-    </script>
     <footer>
         <p>© 2023, Нилогов Сергей </p>
         <p><i>Электронная почта:</i> nilogov2003@gmal.com</p>

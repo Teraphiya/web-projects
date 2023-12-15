@@ -189,17 +189,12 @@ i {
 }
 
 
-
-
-
-
 /* Таблица с населением */
 
 
 .table {
   display: grid;
   overflow: auto;
-  border-radius: var(--spacing-l);
   grid-template-columns: 1fr;
 }
 
@@ -209,13 +204,11 @@ i {
 
 .table .table_body, .table .table_head {
   display: grid;
-  grid-template-columns: subgrid;
 }
 
 .table_row {
   display: grid;
-  color: var(--font-primary-light);
-  text-align: left;
+  color: black;
 }
 
 .table_row_empty {
