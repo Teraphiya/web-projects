@@ -12,7 +12,7 @@ body {
     line-height: 1.5;
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
-    color: #333;
+    color: #343434;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -21,7 +21,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: #282828;
   color: #fff;
   padding: 1px 0;
   /* Для внутренних отступов, сверху\снизу-слева\справа */
@@ -106,7 +106,7 @@ main {
 footer {
   text-align: center;
   padding: 3px 0;
-  background-color: #333;
+  background-color: #282828;
   color: #fff;
   position: relative;
 }
@@ -280,7 +280,7 @@ footer p {
 
 #newCommentForm button {
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #008000;
     color: white;
     border: none;
     cursor: pointer;
@@ -288,7 +288,7 @@ footer p {
 }
 
 #newCommentForm button:hover {
-    background-color: #45a049;
+    background-color: #004524;
 }
 
 
@@ -299,7 +299,7 @@ footer p {
     width: 50px;
     height: 50px;
     border: 5px solid #f3f3f3;
-    border-top: 5px solid #333;
+    border-top: 5px solid #343434;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -332,4 +332,32 @@ footer p {
   body {
     font-size: 0.9375rem;
   }
+}
+
+#back-to-top {
+  display: none;
+  /* По умолчанию скрываю кнопку */
+  position: fixed;
+  bottom: 10px;
+  /* Снизу */
+  right: 10px;
+  /* Справа */
+  background-color: #696969;
+  border: none;
+  /* - рамка */
+  cursor: pointer;
+  /* Курсор в виде руки при наведении */
+  border-radius: 100%;
+  /* Делаею кнопку круглой */
+  padding: 10px 15px;
+  /* Отступы внутри кнопки */
+  font-size: 1.25rem;
+  /* Размер смайла */
+  transition: background-color 0.3s;
+  /* Плавное изменение цвета фона */
+}
+
+#back-to-top:hover {
+  background-color: #555;
+  /* Цвет фона кнопки при наведении */
 }

@@ -14,7 +14,7 @@ html {
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  color: #333;
+  color: #343434;
   font-size: 1rem;
   line-height: 1.5;
   /* Это я сделал для добавления фона, который статичен при скроллинге */
@@ -27,7 +27,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: #282828;
   color: #fff;
   padding: 1px 0;
   /* Для внутренних отступов, сверху\снизу-слева\справа */
@@ -131,7 +131,7 @@ code {
 footer {
   text-align: center;
   padding: 3px 0;
-  background-color: #333;
+  background-color: #282828;
   color: #fff;
   position: relative;
 }
@@ -335,7 +335,7 @@ nav ul li a.active {
 
 #schedule-form button {
   text-align: center;
-  background-color: #333;
+  background-color: #343434;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -452,7 +452,7 @@ nav ul li a.active {
 /* Кнопка поиск */
 
 #search-attraction {
-  background-color: #333;
+  background-color: #343434;
   color: white;
   padding: 10px 20px;
   display: flex;
